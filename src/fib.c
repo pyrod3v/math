@@ -48,7 +48,7 @@ int main(int argc, char* argv[]) {
             mpz_mul_2exp(temp1, b, 1);    // 2*b
             mpz_sub(temp1, temp1, a);     // 2*b - a
             mpz_mul(temp2, a, temp1);     // F(2m)
-    
+
             // F(2m+1) = a^2 + b^2
             mpz_mul(temp1, a, a);         // a^2
             mpz_mul(a, b, b);             // b^2 (reuse a after its value is used)
