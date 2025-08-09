@@ -21,11 +21,7 @@ long nums[10000];
 long sqr_n_idx(const long n) {
     // x = n*n/2
     // finds the x value corresponding to the provided n value
-    int x = n;
-    if (n & 1)
-        x++;
-    x >>= 1;
-
+    long x = (n + (n & 1)) >> 1;
     return x * x;
 }
 
