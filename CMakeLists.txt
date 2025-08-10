@@ -5,7 +5,7 @@ project(math LANGUAGES C)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
-add_compile_options(-Os -Wall -pipe)
+add_compile_options(-Os -mavx2 -mfma -Wall -pipe)
 
 set(BIN ${CMAKE_BINARY_DIR}/bin)
 
