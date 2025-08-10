@@ -21,7 +21,9 @@ set_target_properties(fib PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${BIN}
 )
 add_executable(sqr EXCLUDE_FROM_ALL
-    ${CMAKE_SOURCE_DIR}/sqr/sqr.c
+    ${CMAKE_SOURCE_DIR}/sqr/test.c
+        sqr/sqr.c
+        sqr/sqr.h
 )
 set_target_properties(sqr PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${BIN}

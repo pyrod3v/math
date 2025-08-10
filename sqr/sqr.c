@@ -14,10 +14,6 @@ limitations under the License.
 */
 
 #include <immintrin.h>
-#include <stdio.h>
-#include <time.h>
-
-long nums[10000];
 
 long sqr_n_idx(const long n) {
     // x = n*n/2
@@ -26,7 +22,7 @@ long sqr_n_idx(const long n) {
     return x * x;
 }
 
-void find_squares(const int i) {
+void find_squares(const int i, long *nums) {
     // finds an i amount of square numbers
     int n = 3;
     int x = 1;
@@ -41,7 +37,7 @@ void find_squares(const int i) {
     }
 }
 
-void find_squares_simd(int32_t *nums, size_t n) {
+void find_squares_simd(size_t n, int32_t *nums) {
     const size_t lanes = 8; // AVX2 is 256-bit / 32-bit -> 8 lanes
     const __m256i inc = _mm256_setr_epi32(0,1,2,3,4,5,6,7);
 
@@ -56,16 +52,4 @@ void find_squares_simd(int32_t *nums, size_t n) {
         int32_t v = i + 2;
         nums[i] = v * v;
     }
-}
-
-int main() {
-    float start = (float)clock();
-    find_squares(10000);
-    float end = (float)clock();
-
-    for (int i = 0; i < 10000; i++) {
-        printf("%ld\n", nums[i]);
-    }
-
-    printf("Time: %fμs\n", (end - start));
 }
