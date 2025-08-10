@@ -15,17 +15,17 @@ limitations under the License.
 
 #include <immintrin.h>
 
-long sqr_n_idx(const long n) {
+unsigned long sqr_n_idx(size_t n) {
     // x = n*n/2
     // finds the x value corresponding to the provided n value
-    long x = (n + (n & 1)) >> 1;
+    unsigned long x = (n + (n & 1)) >> 1;
     return x * x;
 }
 
-void find_squares(const int i, long *nums) {
+void find_squares(const int i, unsigned long *nums) {
     // finds an i amount of square numbers
-    int n = 3;
-    int x = 1;
+    unsigned long n = 3;
+    unsigned long x = 1;
     for (int j = i; j > 0; j--) {
         x = n + x;
         nums[i - j] = x;
