@@ -19,7 +19,7 @@ limitations under the License.
 #include <stdint.h>
 
 unsigned long sqr_n_idx(size_t n);
-void find_squares(const int i, unsigned long *nums);
-void find_squares_simd(size_t n, int32_t *nums);
+void find_squares(int i, unsigned long *nums);
+void find_squares_simd(size_t n, uint32_t *nums);
 
 #endif //SQR_H

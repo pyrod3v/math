@@ -4,7 +4,7 @@
 #include "sqr.h"
 
 int main() {
-    unsigned long nums[10000]; int32_t nums_simd[10000];
+    unsigned long nums[10000]; uint32_t nums_simd[10000];
 
     float start = (float)clock();
     find_squares(10000, nums);

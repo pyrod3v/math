@@ -37,7 +37,7 @@ void find_squares(const int i, unsigned long *nums) {
     }
 }
 
-void find_squares_simd(size_t n, int32_t *nums) {
+void find_squares_simd(const size_t n, unsigned int *nums) {
     const size_t lanes = 8; // AVX2 is 256-bit / 32-bit -> 8 lanes
     const __m256i inc = _mm256_setr_epi32(0,1,2,3,4,5,6,7);
 
