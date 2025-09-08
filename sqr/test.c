@@ -1,3 +1,4 @@
+#include <assert.h>
 #include <stdio.h>
 #include <time.h>
 
@@ -24,6 +25,7 @@ int main() {
     long long time_simd = elapsed_ns(t1, t2);
 
     for (int i = 0; i < 10000; i++) {
+        assert(nums[i] == nums_simd[i]);
         printf("%ld - %i\n", nums[i], nums_simd[i]);
     }
 
