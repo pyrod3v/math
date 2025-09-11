@@ -44,7 +44,7 @@ void find_squares_simd(const size_t n, unsigned int *nums) {
     for (size_t i = 0; i + lanes <= n; i += lanes) {
         __m256i base = _mm256_set1_epi32((int32_t)i + 2);
         __m256i n = _mm256_add_epi32(base, inc); // i+2, i+3, etc
-        __m256i x  = _mm256_mullo_epi32(n, n);
+        __m256i x = _mm256_mullo_epi32(n, n);
         _mm256_storeu_si256((__m256i*)(nums + i), x);
     }
 

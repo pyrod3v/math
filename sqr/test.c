@@ -4,7 +4,7 @@
 
 #include "sqr.h"
 
-inline long long elapsed_ns(const struct timespec start, const struct timespec end) {
+static inline long long elapsed_ns(const struct timespec start, const struct timespec end) {
     return (end.tv_sec - start.tv_sec) * 1000000000LL +
            (end.tv_nsec - start.tv_nsec);
 }
